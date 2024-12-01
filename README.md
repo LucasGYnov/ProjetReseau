@@ -33,7 +33,7 @@ Ce projet consiste en la conception, l'optimisation et la mise en œuvre d'une i
 ### 2. **Présentation PowerPoint**
 - **[Présentation PPTX](./Projet réseauxB2.pptx)** : Synthèse des aspects clés du projet, topologie et équipements.
 ### 3. **Schémas Logiques et Physiques**
-- **[Schéma Logique](./shemaLogique.png)** : Vue des VLANs, interconnexions et routage.
+- **[Schéma Logique](./SchémaLogique.png)** : Vue des VLANs, interconnexions et routage.
 - **[Schéma Physique](./SchemaPhysique.png)** : Implantation des équipements par étage.
 ### 4. **Maquette Cisco**
 - **[Maquette Cisco](./maquette reseau groupe Aruba1.pkt)** :Simulation de l’architecture réseau sur Packet Tracer.
