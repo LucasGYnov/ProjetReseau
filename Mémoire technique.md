@@ -21,7 +21,7 @@ Ce mémoire présente la conception et la mise en place d'une architecture rése
 Notre schéma logique ci-dessous permet de mieux comprendre l’organisation des différents **VLAN** dans le réseau et la manière dont ces derniers sont **interconnectés**.  
 Ce schéma aide également à analyser le **flux de données** entre les VLAN et à évaluer les **relations** entre eux, notamment en termes de **sécurité** et d’**accessibilité**.  
 Les **routes configurées** entre les VLAN via le **routeur** ou le **commutateur de niveau 3** sont essentielles pour garantir une **communication fluide** tout en maintenant l’**isolation nécessaire**.
-![](shema-logique2.svg)
+![](shemaLogique.png)
 
 En résumé, l’objectif principal de ce schéma est d’offrir une vue d’ensemble claire de l’organisation logique du réseau, facilitant ainsi son diagnostic et son évolution. Il peut également servir à identifier les points potentiels de congestion ou de vulnérabilité.
 
@@ -29,7 +29,7 @@ En résumé, l’objectif principal de ce schéma est d’offrir une vue d’ens
 **Schéma physique :**
 L'objectif principal de ce schéma est de fournir une vue d'ensemble des **connexions physiques entre les équipements réseau, les points d'accès, et les dispositifs de sécurité ou de communication**. Cela facilite la compréhension du fonctionnement et de la manière dont les différents étages sont interconnectés.
 
-![](Schema_physique.png)
+![](SchemaPhysique.png)
 
 En résumé, ce schéma offre une vue claire de l’organisation et de l’interconnexion des équipements dans un bâtiment. Il met en avant une architecture bien pensée, axée sur la redondance, la sécurité et la performance, tout en restant évolutive pour répondre aux besoins futurs.
 
@@ -180,65 +180,65 @@ La matrice des flux définit les règles de communication entre les VLANs en fon
 ## 6. Récapitulatif
 >[!note] Récapitulatif de l'architecture réseau proposée
 >#### Schéma logique :  
-> **Éléments clés du schéma :**  
-> **Routeur principal :**  
-> - Un routeur de la série Aruba 7205 agit comme passerelle entre le réseau interne et l'extérieur (Internet).  
-> - Il est également responsable de gérer le routage inter-VLAN lorsque cela est nécessaire.  
+>**Éléments clés du schéma :**  
+>**Routeur principal :**  
+>- Un routeur de la série Aruba 7205 agit comme passerelle entre le réseau interne et l'extérieur (Internet).  
+>- Il est également responsable de gérer le routage inter-VLAN lorsque cela est nécessaire.  
 >  
-> **Switch Core :**  
-> - Le switch principal (core) de modèle HPE Aruba CX 6300M centralise les connexions réseau des VLAN.  
-> - Il est le point névralgique qui interconnecte les switches secondaires (access switches) et assure la gestion du trafic interne.  
+>**Switch Core :**  
+>- Le switch principal (core) de modèle HPE Aruba CX 6300M centralise les connexions réseau des VLAN.  
+>- Il est le point névralgique qui interconnecte les switches secondaires (access switches) et assure la gestion du trafic interne.  
 >  
-> **Switch d’accès :**  
-> - Les switches d’accès connectent les VLAN individuels au switch core et permettent la segmentation logique du réseau au niveau des sous-réseaux.  
+>**Switch d’accès :**  
+>- Les switches d’accès connectent les VLAN individuels au switch core et permettent la segmentation logique du réseau au niveau des sous-réseaux.  
 >  
-> **Les VLAN et leurs segments :**  
-> - Chaque VLAN représente un sous-réseau avec une plage d’adresses IP spécifique. Voici quelques exemples des VLAN définis :  
->   - **VLAN 01 - Sécurité Incendie (10.0.41.0/26)** : Réservé aux équipements liés à la gestion des incendies.  
->   - **VLAN 10 - RH (10.0.11.0/24)** : Dédié au département des ressources humaines.  
->   - **VLAN 12 - Design (10.0.12.0/24)** : Destiné aux équipes de conception.  
->   - **VLAN 15 - Direction (10.0.15.0/24)** : Spécifique à la direction.  
->   - **VLAN 20 - Conception (10.10.20.0/24)** : Regroupe les services de conception avancée.  
->   - **VLAN 19 - Data (10.0.19.0/24)** : Centralise les données critiques et est marqué en rouge pour souligner son importance stratégique.  
+>**Les VLAN et leurs segments :**  
+>- Chaque VLAN représente un sous-réseau avec une plage d’adresses IP spécifique. Voici quelques exemples des VLAN définis :  
+>  - **VLAN 01 - Sécurité Incendie (10.0.41.0/26)** : Réservé aux équipements liés à la gestion des incendies.  
+>  - **VLAN 10 - RH (10.0.11.0/24)** : Dédié au département des ressources humaines.  
+>  - **VLAN 12 - Design (10.0.12.0/24)** : Destiné aux équipes de conception.  
+>  - **VLAN 15 - Direction (10.0.15.0/24)** : Spécifique à la direction.  
+>  - **VLAN 20 - Conception (10.10.20.0/24)** : Regroupe les services de conception avancée.  
+>  - **VLAN 19 - Data (10.0.19.0/24)** : Centralise les données critiques et est marqué en rouge pour souligner son importance stratégique.  
 >  
-> **Connexion à Internet et inter-VLAN :**  
-> - Les flèches vertes indiquent les VLAN qui ont un accès direct à Internet.  
-> - Les flèches bleues montrent les connexions entre certains VLAN. Par exemple, le **VLAN 14 - Informatique (10.0.14.0/24)** est interconnecté avec d’autres VLAN (en bleu), probablement pour gérer les infrastructures réseau ou fournir des services aux autres départements.  
-> - Les cercles rouges marquent les VLAN qui sont accessibles depuis d’autres VLAN (par exemple, pour les imprimantes ou les partages de fichiers).  
+>**Connexion à Internet et inter-VLAN :**  
+>- Les flèches vertes indiquent les VLAN qui ont un accès direct à Internet.  
+>- Les flèches bleues montrent les connexions entre certains VLAN. Par exemple, le **VLAN 14 - Informatique (10.0.14.0/24)** est interconnecté avec d’autres VLAN (en bleu), probablement pour gérer les infrastructures réseau ou fournir des services aux autres départements.  
+>- Les cercles rouges marquent les VLAN qui sont accessibles depuis d’autres VLAN (par exemple, pour les imprimantes ou les partages de fichiers).  
 >  
-> **Légende et symboles :**  
-> - Les différents types d’accès sont distingués grâce à un code couleur et des flèches directionnelles :  
->   - **Flèche verte** : Accès Internet.  
->   - **Flèche noire** : Accès aux imprimantes ou équipements partagés.  
->   - **Flèche bleue** : Accès inter-VLAN pour certains services.  
+>**Légende et symboles :**  
+>- Les différents types d’accès sont distingués grâce à un code couleur et des flèches directionnelles :  
+>  - **Flèche verte** : Accès Internet.  
+>  - **Flèche noire** : Accès aux imprimantes ou équipements partagés.  
+>  - **Flèche bleue** : Accès inter-VLAN pour certains services.  
 >  
-> **Méthodologie de conception :**  
-> **Segmentation logique via les VLAN :**  
-> - La segmentation en VLAN permet d'isoler les différents départements ou services (par exemple, RH, Direction, Informatique) afin de limiter les risques de propagation des menaces (cyberattaques ou problèmes réseau).  
-> - Chaque VLAN est associé à un sous-réseau IP distinct, ce qui simplifie la gestion des adresses IP et permet une identification claire du trafic.  
+>**Méthodologie de conception :**  
+>**Segmentation logique via les VLAN :**  
+>- La segmentation en VLAN permet d'isoler les différents départements ou services (par exemple, RH, Direction, Informatique) afin de limiter les risques de propagation des menaces (cyberattaques ou problèmes réseau).  
+>- Chaque VLAN est associé à un sous-réseau IP distinct, ce qui simplifie la gestion des adresses IP et permet une identification claire du trafic.  
 >  
-> **Sécurité renforcée :**  
-> - Certains VLAN sont isolés des autres (pas d'interconnexion) pour protéger les informations sensibles.  
-> - Par exemple, les VLAN liés à la sécurité incendie ou à la vidéosurveillance sont isolés pour limiter tout accès non autorisé.  
-> - Le routage inter-VLAN est contrôlé par le routeur principal, permettant de définir des règles de pare-feu précises.  
+>**Sécurité renforcée :**  
+>- Certains VLAN sont isolés des autres (pas d'interconnexion) pour protéger les informations sensibles.  
+>- Par exemple, les VLAN liés à la sécurité incendie ou à la vidéosurveillance sont isolés pour limiter tout accès non autorisé.  
+>- Le routage inter-VLAN est contrôlé par le routeur principal, permettant de définir des règles de pare-feu précises.  
 >  
-> **Performance et priorisation :**  
-> - Le réseau est conçu pour assurer une haute performance, en particulier pour les VLAN critiques (comme le VLAN Data), grâce à une hiérarchie claire entre les switches d’accès et le switch core.  
-> - Les VLAN ayant besoin d’un accès internet direct (par exemple, pour la navigation ou les services cloud) sont connectés au routeur via des règles spéciales.  
+>**Performance et priorisation :**  
+>- Le réseau est conçu pour assurer une haute performance, en particulier pour les VLAN critiques (comme le VLAN Data), grâce à une hiérarchie claire entre les switches d’accès et le switch core.  
+>- Les VLAN ayant besoin d’un accès internet direct (par exemple, pour la navigation ou les services cloud) sont connectés au routeur via des règles spéciales.  
 >  
-> **Évolutivité et maintenance :**  
-> - Ce design modulaire basé sur les VLAN permet une grande évolutivité.  
-> - Si de nouveaux départements ou services sont ajoutés, de nouveaux VLAN peuvent être facilement intégrés sans impacter les autres.  
-> - La séparation logique simplifie la gestion et la maintenance. Par exemple, un problème dans un VLAN n'affectera pas les autres.  
+>**Évolutivité et maintenance :**  
+>- Ce design modulaire basé sur les VLAN permet une grande évolutivité.  
+>- Si de nouveaux départements ou services sont ajoutés, de nouveaux VLAN peuvent être facilement intégrés sans impacter les autres.  
+>- La séparation logique simplifie la gestion et la maintenance. Par exemple, un problème dans un VLAN n'affectera pas les autres.  
 >  
-> **Centralisation des ressources partagées :**  
-> - Les équipements partagés (comme les imprimantes ou les serveurs) sont placés dans des VLAN accessibles par plusieurs autres VLAN, mais toujours de manière contrôlée et sécurisée.  
+>**Centralisation des ressources partagées :**  
+>- Les équipements partagés (comme les imprimantes ou les serveurs) sont placés dans des VLAN accessibles par plusieurs autres VLAN, mais toujours de manière contrôlée et sécurisée.  
 >  
-> **Avantages du design logique :**  
-> - **Isolation des services sensibles** : Les données critiques ou les systèmes de sécurité ne sont accessibles que par des VLAN spécifiques, réduisant les risques de compromission.  
-> - **Gestion simplifiée** : La centralisation des flux via le switch core et le routage par le routeur principal offre une visibilité et un contrôle optimal sur le réseau.  
-> - **Flexibilité** : Ce design permet de modifier ou d'ajouter des VLAN sans restructurer entièrement le réseau.  
-> - **Sécurité renforcée** : En limitant les accès inter-VLAN et en isolant certains segments, les risques de cyberattaques ou d'accès non autorisés sont réduits.  
+>**Avantages du design logique :**  
+>- **Isolation des services sensibles** : Les données critiques ou les systèmes de sécurité ne sont accessibles que par des VLAN spécifiques, réduisant les risques de compromission.  
+>- **Gestion simplifiée** : La centralisation des flux via le switch core et le routage par le routeur principal offre une visibilité et un contrôle optimal sur le réseau.  
+>- **Flexibilité** : Ce design permet de modifier ou d'ajouter des VLAN sans restructurer entièrement le réseau.  
+>- **Sécurité renforcée** : En limitant les accès inter-VLAN et en isolant certains segments, les risques de cyberattaques ou d'accès non autorisés sont réduits.  
 
 
 
