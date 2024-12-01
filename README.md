@@ -36,7 +36,7 @@ Ce projet consiste en la conception, l'optimisation et la mise en œuvre d'une i
 - **[Schéma Logique](./shemaLogique.png)** : Vue des VLANs, interconnexions et routage.
 - **[Schéma Physique](./SchemaPhysique.png)** : Implantation des équipements par étage.
 ### 4. **Maquette Cisco**
-- **[Maquette Cisco](./maquette.pkt)** :Simulation de l’architecture réseau sur Packet Tracer.
+- **[Maquette Cisco](./maquette reseau groupe Aruba1.pkt)** :Simulation de l’architecture réseau sur Packet Tracer.
 ### 5. **DPGF**
 - **Mémoire Technique** : La liste des équipements avec une estimation des coûts est détaillée dans le document technique au format Markdown et PDF.
 - **Fichier Excel** : Le fichier DPGF est également fourni.
@@ -61,6 +61,6 @@ Cette approche garantit une infrastructure réseau robuste, sécurisée, et flex
 
 ---
 ## Liens Importants
-- [Google Sheets](#) : Lien vers le tableau de suivi du projet, pour gérer les équipements et coûts associés.
-- [Trello](#) : Lien vers le board Trello pour la gestion des tâches et le suivi de l'avancement du projet.
+- [Fichier du google sheets](https://docs.google.com/spreadsheets/d/1vjbQp0kbvMhtk-WGSGv0-eP-QYDz8x8JqZvnp98eiAQ/edit?usp=sharing)
+- [Lien du trello](https://trello.com/b/wBMJVfsv/projet-reseau-b2)
 
