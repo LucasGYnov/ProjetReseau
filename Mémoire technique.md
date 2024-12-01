@@ -18,10 +18,12 @@ Ce mémoire présente la conception et la mise en place d'une architecture rése
 ## 2. Architecture réseau proposée
 ### 2.1 Schéma de l'architecture réseau
 **Schéma logique :**
-Ce schéma logique illustre la manière dont le réseau est organisé au niveau des **VLAN**et les interconnexions entre ces VLAN, les équipements réseau (routeurs et switches), et les services critiques. Il vise à expliquer comment les différentes entités du réseau (utilisateurs, services et équipements) sont segmentées pour garantir une **séparation logique**, une **sécurité accrue**, et une **meilleure gestion du trafic réseau**.
+Notre schéma logique ci-dessous permet de mieux comprendre l’organisation des différents **VLAN** dans le réseau et la manière dont ces derniers sont **interconnectés**.  
+Ce schéma aide également à analyser le **flux de données** entre les VLAN et à évaluer les **relations** entre eux, notamment en termes de **sécurité** et d’**accessibilité**.  
+Les **routes configurées** entre les VLAN via le **routeur** ou le **commutateur de niveau 3** sont essentielles pour garantir une **communication fluide** tout en maintenant l’**isolation nécessaire**.
 ![](shema-logique2.svg)
 
-En résumé, ce schéma logique illustre une infrastructure réseau bien pensée, où la segmentation en VLAN offre une combinaison d'isolation, de sécurité et de performance. La méthodologie utilisée garantit une structure évolutive, adaptée aux besoins des différents départements tout en restant robuste face aux menaces potentielles.
+En résumé, l’objectif principal de ce schéma est d’offrir une vue d’ensemble claire de l’organisation logique du réseau, facilitant ainsi son diagnostic et son évolution. Il peut également servir à identifier les points potentiels de congestion ou de vulnérabilité.
 
 ---
 **Schéma physique :**
@@ -237,9 +239,11 @@ La matrice des flux définit les règles de communication entre les VLANs en fon
 > - **Gestion simplifiée** : La centralisation des flux via le switch core et le routage par le routeur principal offre une visibilité et un contrôle optimal sur le réseau.  
 > - **Flexibilité** : Ce design permet de modifier ou d'ajouter des VLAN sans restructurer entièrement le réseau.  
 > - **Sécurité renforcée** : En limitant les accès inter-VLAN et en isolant certains segments, les risques de cyberattaques ou d'accès non autorisés sont réduits.  
->---
->
->#### Schéma logique :
+
+
+
+>[!note] Récapitulatif de l'architecture réseau proposée
+>#### Schéma physique :
 > **Éléments principaux :**  
 > **Équipements réseau utilisés :**  
 > - **Routeur Aruba série 7205** : Permet de gérer le routage et la connexion à l'extérieur du réseau.  
