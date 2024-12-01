@@ -13,7 +13,7 @@ Ce projet consiste en la conception, l'optimisation et la mise en œuvre d'une i
 1. Clonez ce repository :  
    ```bash
    git clone https://github.com/LucasGYnov/ProjetReseau.git
-````
+```
 2. Pour consulter la présentation PowerPoint et les schémas, ouvrez les fichiers `.pptx` et `.png` dans les applications appropriées.
 3. Les documents PDF et Markdown peuvent être consultés directement.
 
