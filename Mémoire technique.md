@@ -93,25 +93,25 @@ Pour chaque étage, les besoins en PoE (Power over Ethernet) et en bande passant
 ---
 ## 3. Plan d'adressage IP
 ### Plan d'adressage hiérarchisé
-
 | **VLAN**              | **Numéro de VLAN** | **Réseau IP** | **Masque** | **Passerelle par défaut** | **Nb max d'appareils** | **Nb appareils actuels** |
 | --------------------- | ------------------ | ------------- | ---------- | ------------------------- | ---------------------- | ------------------------ |
-| **RH**                | 1                  | 10.10.10.0    | /24        | 10.10.10.1                | 254                    | 150                      |
-| **Comptabilité**      | 80                 | 10.10.11.0    | /24        | 10.10.11.1                | 254                    | 120                      |
-| **Design**            | 90                 | 10.10.12.0    | /23        | 10.10.12.1                | 510                    | 80                       |
-| **Logistique**        | 100                | 10.10.14.0    | /23        | 10.10.14.1                | 510                    | 100                      |
-| **Imprimantes**       | 60                 | 10.10.16.0    | /25        | 10.10.16.1                | 126                    | 50                       |
-| **Direction**         | 10                 | 10.10.17.0    | /25        | 10.10.17.1                | 126                    | 40                       |
-| **DSI**               | 20                 | 10.10.18.0    | /24        | 10.10.18.1                | 254                    | 180                      |
-| **R&D**               | 110                | 10.10.19.0    | /23        | 10.10.19.1                | 510                    | 160                      |
-| **Dev**               | 30                 | 10.10.21.0    | /24        | 10.10.21.1                | 254                    | 200                      |
-| **Data**              | 50                 | 10.10.22.0    | /24        | 10.10.22.1                | 254                    | 190                      |
-| **Conception**        | 120                | 10.10.23.0    | /25        | 10.10.23.1                | 126                    | 60                       |
-| **Invités Wi-Fi**     | 140                | 10.10.24.0    | /22        | 10.10.24.1                | 1022                   | 600                      |
-| **Contrôle d'accès**  | 130                | 10.10.28.0    | /25        | 10.10.28.1                | 126                    | 90                       |
-| **Sécurité Incendie** | 150                | 10.10.29.0    | /22        | 10.10.29.1                | 1022                   | 529                      |
-| **Vidéosurveillance** | 160                | 10.10.31.0    | /25        | 10.10.31.1                | 126                    | 22                       |
-| **Système audio**     | 170                | 10.10.33.0    | /26        | 10.10.33.1                | 62                     | 35                       |
+| **RH**                | 10                 | 10.10.10.0    | /24        | 10.10.10.1                | 254                    | 150                      |
+| **Comptabilité**      | 11                 | 10.10.11.0    | /24        | 10.10.11.1                | 254                    | 120                      |
+| **Design**            | 12                 | 10.10.12.0    | /23        | 10.10.12.1                | 510                    | 80                       |
+| **Logistique**        | 13                 | 10.10.14.0    | /23        | 10.10.14.1                | 510                    | 100                      |
+| **Imprimantes**       | 14                 | 10.10.16.0    | /25        | 10.10.16.1                | 126                    | 50                       |
+| **Direction**         | 15                 | 10.10.17.0    | /25        | 10.10.17.1                | 126                    | 40                       |
+| **DSI**               | 16                 | 10.10.18.0    | /24        | 10.10.18.1                | 254                    | 180                      |
+| **R&D**               | 17                 | 10.10.19.0    | /24        | 10.10.19.1                | 510                    | 160                      |
+| **Dev**               | 18                 | 10.10.21.0    | /24        | 10.10.21.1                | 254                    | 200                      |
+| **Data**              | 19                 | 10.10.22.0    | /24        | 10.10.22.1                | 254                    | 190                      |
+| **Conception**        | 20                 | 10.10.23.0    | /25        | 10.10.23.1                | 126                    | 60                       |
+| **Invités Wi-Fi**     | 30                 | 10.10.24.0    | /22        | 10.10.24.1                | 1022                   | 600                      |
+| **Contrôle d'accès**  | 40                 | 10.10.28.0    | /25        | 10.10.28.1                | 126                    | 90                       |
+| **Sécurité Incendie** | 41                 | 10.10.29.0    | /24        | 10.10.29.1                | 1022                   | 529                      |
+| **Vidéosurveillance** | 42                 | 10.10.31.0    | /25        | 10.10.31.1                | 126                    | 22                       |
+| **Système audio**     | 43                 | 10.10.33.0    | /26        | 10.10.33.1                | 62                     | 35                       |
+
 
 Le plan d'adressage IP de l'entreprise est conçu de manière hiérarchique, pour une gestion optimale du réseau. Il a été mis en place en prenant en compte les besoins spécifiques de chaque service, les équipements actuels, ainsi que la capacité de croissance pour chaque département. L'objectif est d'assurer une isolation adéquate des différents services tout en permettant une expansion fluide dans le temps.
 
@@ -307,22 +307,32 @@ L’architecture réseau a été pensée pour garantir une performance optimale,
 
 ---
 
- > [!note] **Récapitulatif pour le plan d’adressage IP**
+> [!note] **Récapitulatif pour le plan d’adressage IP**
 > Le plan d’adressage IP hiérarchisé a été conçu pour répondre aux besoins actuels des différents départements tout en anticipant une croissance future.
 > 
 > - **VLANs administratifs (RH, Comptabilité, etc.)** :  
 >     Chaque service est isolé dans un VLAN avec un masque **/24 (254 adresses)**, adapté à la taille moyenne des départements d’une entreprise typique. Par exemple, le service RH compte 150 appareils sur une plage prévue pour 254, correspondant à une estimation réaliste basée sur les proportions moyennes des effectifs dans une organisation.
 >     
+>     - **Exemples :**  
+>       - **RH** : 150 appareils sur une plage de 254 adresses (10.10.10.0/24).  
+>       - **Comptabilité** : 120 appareils sur une plage de 254 adresses (10.10.11.0/24).  
+> 
 > - **VLANs techniques et spécialisés** :  
 >     Les services tels que les **Imprimantes** ou le **Système audio** utilisent des masques réduits, comme **/25** ou **/26**, adaptés au nombre précis d’appareils identifiés.
 >     
+>     - **Exemples :**  
+>       - **Imprimantes** : 50 appareils sur une plage de 126 adresses (10.10.16.0/25).  
+>       - **Système audio** : 35 appareils sur une plage de 62 adresses (10.10.33.0/26).  
+> 
 > - **Services critiques (Sécurité, Vidéosurveillance, etc.)** :  
 >     Des masques plus larges sont utilisés pour couvrir les équipements nombreux et critiques :
 >     
->     - **Sécurité Incendie** : **/22 (1022 adresses)** pour 529 appareils actuels.
->     - **Contrôle d’accès** : **/25 (126 adresses)** pour 90 appareils.
+>     - **Sécurité Incendie** : **/22 (1022 adresses)** pour 529 appareils actuels (10.10.29.0/22).
+>     - **Contrôle d’accès** : **/25 (126 adresses)** pour 90 appareils (10.10.28.0/25).
+>     - **Vidéosurveillance** : **/25 (126 adresses)** pour 22 appareils (10.10.31.0/25).
+> 
 > - **Réseau Wi-Fi Invités** :  
->     Un masque **/22 (1022 adresses)** est dédié aux visiteurs, offrant une capacité flexible pour les 600 connexions actuelles et futures.
+>     Un masque **/22 (1022 adresses)** est dédié aux visiteurs, offrant une capacité flexible pour les 600 connexions actuelles et futures (10.10.24.0/22).
 >     
 > 
 > ### Avantages clés
@@ -330,6 +340,7 @@ L’architecture réseau a été pensée pour garantir une performance optimale,
 > - **Efficience :** L’adressage évite le gaspillage d’adresses IP tout en offrant une réserve suffisante.
 > - **Évolutivité :** Une planification adaptée pour les appareils et utilisateurs futurs.
 > - **Simplicité :** Une organisation logique pour une gestion réseau facilitée.
+
 
 ---
 ## 7. Ressources et liens 
